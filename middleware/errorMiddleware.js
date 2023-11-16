@@ -4,7 +4,7 @@ const errorHandler = (error, _, res, next) => {
     res.status(statusCode)
     res.json({
       message: error.message,
-      stack: process.env.NODE_ENV === 'production' ? null : error.stack,
+      stack: 'development' === 'production' ? null : error.stack,
     })
   }
   
